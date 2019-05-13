@@ -13,6 +13,21 @@ if os.environ.get("POSTGRES"):
         }
     }
 
+if os.environ.get("SQL_SERVER"):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'sql_server.pyodbc',
+            'HOST': 'db',
+            'PORT': '1433',
+            'USER': 'sa',
+            'PASSWORD': 'admin123!',
+            'NAME': 'ResponseDB',
+            'OPTIONS': {
+                'driver': 'ODBC Driver 13 for SQL Server',
+            }
+        }
+    }
+
 
 LOGGING = {
     'version': 1,
